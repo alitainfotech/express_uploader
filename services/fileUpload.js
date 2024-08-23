@@ -11,7 +11,6 @@ const upload = multer({
     filename: (req, file, cb) => {
       const extension = file.originalname.split(".").pop();
       const isValidFileType = isAllowedFileType(extension.toLowerCase());
-      console.log("isValidFileType", isValidFileType);
       if (isValidFileType) {
         cb(null, Date.now() + "aud" + file.originalname);
       } else {

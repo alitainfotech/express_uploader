@@ -9,7 +9,6 @@ router.get("/", function (req, res, next) {
 
 router.post("/submit", upload.single("audio"), (req, res, next) => {
   try {
-    console.log("saaaaaaa", req.headers.host);
     const link = `http://${req.headers.host}/audio/${req.file.filename}`;
     res.render("submitted", {
       head: "Uploaded",
